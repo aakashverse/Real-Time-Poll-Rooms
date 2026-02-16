@@ -10,9 +10,9 @@ const [loading, setLoading] = useState(false);
 const navigate = useNavigate();
 
 const handleSubmit = async () => {
-if (!question.trim() || options.some(o => !o.trim())) {
-alert("Please fill all fields");
-return;
+    if (!question.trim() || options.some(o => !o.trim())) {
+      alert("Please fill all fields");
+    return;
 }
 
 try {

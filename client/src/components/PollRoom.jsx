@@ -11,7 +11,7 @@ export default function PollRoom() {
   localStorage.getItem(`voted-${id}`) === "true"
   );
 
-  const shareLink = window.location.href;
+  const shareLink = `${window.location.origin}/poll/${id}`;
 
   useEffect(() => {
     axios.get(`${baseURL}/api/polls/${id}`)
