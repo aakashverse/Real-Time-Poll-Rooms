@@ -22,7 +22,7 @@ try {
     options,
   });
 
-  navigate(`${baseURL}/poll/${res.data.pollId}`);
+  navigate(`/poll/${res.data.pollId}`);
 } catch (err) {
   alert("Failed to create poll");
   console.log("createPoll Error: ", err.message);

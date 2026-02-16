@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreatePoll from "./components/CreatePoll";
 import PollRoom from "./components/PollRoom";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -12,5 +12,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
