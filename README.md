@@ -1,16 +1,108 @@
-# React + Vite
+# Real-Time Poll Rooms
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that allows users to create polls, share them via a link, and collect votes with real-time result updates.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Add your deployed URL here]
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+* Create polls with multiple options
+* Shareable poll links
+* Real-time vote updates using WebSockets
+* Persistent storage with MongoDB
+* Duplicate vote protection
+* Responsive and simple UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+**Frontend**
+
+* React
+* Tailwind CSS
+* Socket.io client
+
+**Backend**
+
+* Node.js
+* Express
+* Socket.io
+* MongoDB
+
+---
+
+## Fairness / Anti-Abuse Mechanisms
+
+### 1. Browser Vote Lock
+
+Votes are stored in localStorage to prevent multiple votes from the same browser session.
+
+### 2. IP-Based Duplicate Prevention
+
+Each vote is tied to the user's IP address and stored in the database to block repeat voting.
+
+### 3. Rate Limiting
+
+Basic rate limiting prevents rapid spam voting attempts.
+
+---
+
+## Edge Cases Handled
+
+* Invalid poll ID
+* Empty poll options
+* Duplicate voting attempts
+* Simultaneous voting conflicts
+* Socket disconnect/reconnect
+* Page refresh persistence
+
+---
+
+## Known Limitations
+
+* Users on shared networks may be affected by IP blocking
+* VPN users can bypass IP checks
+* localStorage can be cleared by users
+
+Future improvements could include authentication and device fingerprinting.
+
+---
+
+## Setup Instructions
+
+### Backend
+
+```
+cd server
+npm install
+npm run dev
+```
+
+### Frontend
+
+```
+cd client
+npm install
+npm run dev
+```
+
+---
+
+## Future Improvements
+
+* User authentication
+* Poll expiration timers
+* Analytics dashboard
+* QR code sharing
+* Enhanced UI animations
+
+---
+
+## Author
+
+AKASH YADAV
