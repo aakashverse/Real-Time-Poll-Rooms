@@ -11,7 +11,6 @@ const pollSocket = (io) => {
       const ip = socket.handshake.headers["x-forwarded-for"] || socket.handshake.address;
 
       const poll = await Poll.findOne({ pollId });
-
       if (!poll || poll.voters.includes(ip)) return;
 
       poll.options[optionIndex].votes++;
