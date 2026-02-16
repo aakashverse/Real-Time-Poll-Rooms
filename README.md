@@ -4,7 +4,7 @@ A full-stack web application that allows users to create polls, share them via a
 
 ## Live Demo
 
-🔗 [Add your deployed URL here]
+🔗 https://real-time-poll-rooms-pi.vercel.app
 
 ---
 
