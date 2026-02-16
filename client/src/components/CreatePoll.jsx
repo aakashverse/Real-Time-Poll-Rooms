@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 export default function CreatePoll() {
 const [question, setQuestion] = useState("");
@@ -16,7 +17,7 @@ return;
 
 try {
   setLoading(true);
-  const res = await axios.post("http://localhost:5000/api/polls", {
+  const res = await axios.post(`${baseURL}/api/polls`, {
     question,
     options,
   });

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import socket from "../socket";
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 export default function PollRoom() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ export default function PollRoom() {
 
   useEffect(() => {
     axios
-    .get(`http://localhost:5000/api/polls/${id}`)
+    .get(`${baseURL}/${id}`)
     .then((res) => setPoll(res.data))
     .catch(() => alert("Poll not found"));
     
