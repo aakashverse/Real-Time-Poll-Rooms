@@ -14,8 +14,7 @@ export default function PollRoom() {
   const shareLink = window.location.href;
 
   useEffect(() => {
-    axios
-    .get(`${baseURL}/${id}`)
+    axios.get(`${baseURL}/api/polls/${id}`)
     .then((res) => setPoll(res.data))
     .catch(() => alert("Poll not found"));
     
@@ -25,7 +24,7 @@ export default function PollRoom() {
     
     return () => socket.off("results-updated");
   
-  }, [id]);
+  }, [id, baseURL]);
 
   const vote = (index) => {
     if (voted || !poll) return;

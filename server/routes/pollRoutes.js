@@ -30,11 +30,19 @@ router.post("/", async (req, res) => {
 
 
 router.get("/:id", async (req, res) => {
-  const poll = await Poll.findOne({ pollId: req.params.id });
+  try {
+    const poll = await Poll.findOne({ pollId: req.params.id });
 
-  if (!poll) return res.status(404).json({ error: "Not found" });
+    if (!poll)
+      return res.status(404).json({ error: "Not found" });
 
-  res.json(poll);
+    res.json(poll);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
+
 
 module.exports = router;
